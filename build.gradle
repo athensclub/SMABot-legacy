@@ -1,0 +1,111 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+    //id "de.jjohannes.extra-java-module-info" version "0.1"
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+group 'athensclub'
+version '1.0.0'
+
+mainClassName = 'athensclub.smabot.Main'
+
+dependencies {
+    implementation 'org.javacord:javacord:3.3.2'
+    implementation 'com.sedmelluq:lavaplayer:1.3.71'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.api-client:google-api-client:1.30.10'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.21.1'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.31.0'
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev222-1.25.0'
+    implementation 'com.google.apis:google-api-services-drive:v3-rev197-1.25.0'
+    implementation 'org.mongodb:mongodb-driver-sync:4.1.0'
+}
+
+/*java {
+    modularity.inferModulePath = true
+}
+
+extraJavaModuleInfo {
+    module("lavaplayer-1.3.50.jar", "lavaplayer", "1.3.50") {
+        exports("com.sedmelluq.discord.lavaplayer.player")
+        exports("com.sedmelluq.discord.lavaplayer.tools")
+        exports("com.sedmelluq.discord.lavaplayer.track")
+        exports("com.sedmelluq.discord.lavaplayer.player.event")
+        exports("com.sedmelluq.discord.lavaplayer.track.playback")
+        exports("com.sedmelluq.discord.lavaplayer.source")
+        exports("com.sedmelluq.discord.lavaplayer.source.soundcloud")
+        exports("com.sedmelluq.discord.lavaplayer.source.youtube")
+        exports("com.sedmelluq.discord.lavaplayer.format")
+    }
+
+    module("lava-common-1.1.0.jar", "lava.common", "1.1.0") {
+
+    }
+
+    module("lavaplayer-natives-1.3.13.jar", "lavaplayer.natives", "1.3.13") {
+
+    }
+
+    module("google-api-services-youtube-v3-rev222-1.25.0.jar", "google.api.services.youtube", "v3-rev222-1.25.0") {
+        exports("com.google.api.services.youtube")
+        exports("com.google.api.services.youtube.model")
+    }
+
+    module("google-api-services-drive-v3-rev197-1.25.0.jar", "google.api.services.drive", "rev197-1.25.0") {
+        exports("com.google.api.services.drive")
+        exports("com.google.api.services.drive.model")
+    }
+
+    module("slf4j-api-1.7.25.jar", "slf4j.api", "1.7.25") {
+
+    }
+
+    module("commons-logging-1.2.jar", "commons.logging", "1.2"){
+
+    }
+
+    module("base64-2.3.9.jar", "base64", "2.3.9"){
+
+    }
+
+    module("opencensus-contrib-http-util-0.24.0.jar", "opencensus.contrib.http.util", "0.24.0"){
+
+    }
+
+    module("opencensus-api-0.24.0.jar", "opencensus.api", "0.24.0"){
+
+    }
+
+    module("auto-value-annotations-1.7.2.jar", "auto.value.annotations","1.7.2"){
+
+    }
+
+    module("j2objc-annotations-1.3.jar", "j2objc.annotations", "1.3"){
+
+    }
+
+    module("jsr305-3.0.2.jar", "jsr305", "3.0.2"){
+
+    }
+
+    module("failureaccess-1.0.1.jar", "failureaccess", "1.0.1"){
+
+    }
+
+    module("listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar", "listenablefuture", "9999.0-empty-to-avoid-conflict-with-guava"){
+
+    }
+
+    module("grpc-context-1.22.1.jar", "grpc.context", "1.22.1"){
+
+    }
+}*/
+
+task stage(dependsOn: ['shadowJar', 'clean'])
+shadowJar.mustRunAfter clean

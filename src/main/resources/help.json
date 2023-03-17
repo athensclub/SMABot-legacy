@@ -1,0 +1,152 @@
+{
+  "summary": [
+    "The following are the commands that can be used in server:",
+    "**play** - add the song to the queue and play it.",
+    "**skip** - vote to skip the current song.",
+    "**loop** - toggle looping queue.",
+    "**ban** - ban the song from this server.",
+    "**unban** - unban the banned song from this server.",
+    "**jail** - for forcing a user to stay in a voice channel.",
+    "**unjail** - for making a user free to join any voice channel they have permission to.",
+    "**listen** - to make this bot accept commands from text channel.",
+    "**nolisten** - to make this bot ignore commands from text channel.",
+    "**rr** - remove range of song from the server queue.",
+    "**perms** - view, edit permissions related data.",
+    "**queue** - view the current song queue of this server.",
+    "**leave** - make this bot leave voice channel and clear the queue.",
+    "**libs** - view, edit, play your own custom libraries of songs.",
+    "**shuffle** - shuffle the songs in the current queue.",
+    "**help** - display this message and other help messages for each command.",
+    "**prefix** - view and edit the prefix for this bot in this server.",
+    "**announce** - toggle to announce the currently playing song.",
+    "Note that most of these commands can not be used in DM.",
+    "For more information about each commands, type !help <command_name>",
+    "There is also a DM commands that only works in DM which includes the following:",
+    "**libs** - can only be used to create/view library and add/remove song from library.",
+    "To use DM commands, you don't have to use any prefix."
+  ],
+  "commands": {
+    "help": [
+      "**help**",
+      "Display help message. Tell a summary of each commands.",
+      "**help <command_name>**",
+      "Display information about the given command.",
+      "<command_name>: the name of the command which the its help message is going to be shown."
+    ],
+    "announce": [
+      "**announce**",
+      "Toggle whether this bot will display the currently playing song."
+    ],
+    "prefix": [
+      "**prefix**",
+      "View the prefix for this bot in this server.",
+      "**prefix <new_prefix>**",
+      "Set the prefix for this bot in this server to be the new prefix. Since trailing space is automatically trimmed in discord, trailing space can be used by using escaping character '\\\\s' and the character '\\\\' must be escaped using character '\\\\\\\\'",
+      "<new_prefix>: the new prefix for this bot in this server."
+    ],
+    "shuffle": [
+      "**shuffle**",
+      "Shuffle the songs in the current queue."
+    ],
+    "play": [
+      "**play <song_name|url>**",
+      "add the given song or url to the server's queue",
+      "<song name|url>: the name or the url of the song to be added to the queue"
+    ],
+    "skip": [
+      "**skip**",
+      "Vote to skip the currently playing song. If the user has forceskip permission, the song is automatically skipped"
+    ],
+    "loop": [
+      "**loop**",
+      "Loop songs in queue. Using this command while the queue is looping will stop looping the queue."
+    ],
+    "jail": [
+      "**jail**",
+      "View list of users who are currently being jailed. A jailed user will be automatically moved to their jail channel when the join any voice channel.",
+      "**jail <nametag> <channel_id> <time_amount> <time_unit>**",
+      "Put the user in jail (admins only)",
+      "<nametag>: the nametag of user who will be put in jail.",
+      "<channel_id>: the id of voice channel to be set a jail for the user.",
+      "<time_amount>: the amount of time to put the user in jail.",
+      "<time_unit>: the unit for time_amount could be one of the following: second, seconds, minute, minutes, hour, hours, day, days. Note that using unit with plural form or singular form (eg. second/seconds) does not have any difference."
+    ],
+    "unjail": [
+      "**unjail <nametag>**",
+      "Make the user free from the jail (admins only).",
+      "<nametag>: the name tag of the user to be freed from jail."
+    ],
+    "ban": [
+      "**ban**",
+      "View list of banned song",
+      "**ban <song_name|url>**",
+      "Make the song can't be played by SMABot (admins only)",
+      "<song_name|url>: the name or the url of the song to be banned"
+    ],
+    "rr": [
+      "**rr <begin_index> <end_index>**",
+      "Remove range of songs from queue",
+      "<begin_index>: beginning index of songs to be removed from the queue (inclusive)",
+      "<end_index>: ending index of songs to be removed from the queue (inclusive)"
+    ],
+    "perms": [
+      "**perms <nametag> <permission_name|all> <deny|allow>**",
+      "Denies or allows user's permission (admins only).",
+      "<nametag>: the user to change permission.",
+      "<permission_name|all>: the name of the permission to set to the user, or all for all the permissions.",
+      "<deny|allow>: whether the permission is going to be deny or allowed for the given user.",
+      "**perms <nametag>**",
+      "View user's permission",
+      "<nametag>: the name of person you want to view.",
+      "**perms**",
+      "View message author's permission."
+    ],
+    "listen": [
+      "**listen**",
+      "Show all the text channels and whether this bot is listening to it. (admins only)",
+      "**listen <channel_id>**",
+      "Make this bot accept commands from the channel with the given channel id. (By default every channel is already accepted by this bot) (admins only)",
+      "<channel_id>: the id of the channel to make this bot listen to. (Can be obtained by right clicking on the channel and click 'Copy ID')"
+    ],
+    "nolisten": [
+      "**nolisten <channel_id>**",
+      "Make this bot ignores commands from the channel with the given channel id. (admins only)",
+      "<channel_id>: the id of the channel to make this bot ignore commands. (Can be obtained by right clicking on the channel and click 'Copy ID')"
+    ],
+    "unban": [
+      "**unban <song_name|url>**",
+      "Make the song (that is currently banned) can be played by SMABot (admins only) ",
+      "<song name|url>: the name or url of song to be unbanned."
+    ],
+    "queue": [
+      "**queue**",
+      "View list of all the songs in the queue."
+    ],
+    "leave": [
+      "**leave**",
+      "Disconnect this bot from voice channel and clear all the song queue."
+    ],
+    "libs": [
+      "**libs**",
+      "View all the libraries that you own. This will not show your private libraries. To view your private libraries, use this command in your DM.",
+      "**libs** new",
+      "Create new library with index that follow your last library, or 1 if there is no library yet.",
+      "**libs add <library_index> <song_name|url>**",
+      "Add the given song to the library with the given index.",
+      "<library_index>: the index of the library that you want to insert the song to.",
+      "<song_name|url>: the name or the url of the song that you want to insert to the library.",
+      "**libs rr <library_index> <begin_index> <end_index>**",
+      "Remove range of songs from the library with the given index.",
+      "<library_index>: the index of the library that you want to insert the song to.",
+      "<beginning index>: beginning index of songs to be removed from the library (inclusive)",
+      "<ending index>: ending index of songs to be removed from the library (inclusive)",
+      "**libs play <library_index>**",
+      "Add all the song in the library with the given index to the server song queue.",
+      "<library_index>: the index of the library that you want to insert the song to.",
+      "**libs hide <library_index>**",
+      "Make the library private and can not be used or viewed by other users. Note that the messages about this library that is created before this command will not be automatically removed.",
+      "**libs show <library_index>**",
+      "Make the library public and can be used and viewed by other users. This is the default visibility for any libraries."
+    ]
+  }
+}
